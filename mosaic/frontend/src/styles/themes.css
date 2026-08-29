@@ -1,0 +1,139 @@
+/*
+  MOSAIC theme tokens.
+  Six themes, selected via <html data-theme="...">:
+    windows11 (default) | light | dark | amoled | red | blue
+  Every theme defines the same variable set so components never branch on
+  theme name directly — only on these tokens.
+*/
+
+:root {
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-2: 0 8px 28px rgba(0, 0, 0, 0.28);
+  --font-ui: "Segoe UI Variable", "Segoe UI", "Vazirmatn", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-mono: "Cascadia Code", "JetBrains Mono", "Consolas", ui-monospace, monospace;
+  --transition-fast: 120ms cubic-bezier(0.2, 0, 0, 1);
+  --transition-med: 220ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* ---- Windows 11 (default): Mica-inspired light chrome, Fluent blue ---- */
+html[data-theme="windows11"] {
+  --bg-app: #f3f3f3;
+  --bg-canvas: #fafafb;
+  --bg-canvas-dot: #d8d8dc;
+  --surface-1: rgba(255, 255, 255, 0.72);
+  --surface-2: rgba(255, 255, 255, 0.9);
+  --surface-border: rgba(0, 0, 0, 0.08);
+  --text-primary: #1b1b1b;
+  --text-secondary: #5c5c5c;
+  --accent: #0078d4;
+  --accent-hover: #106ebe;
+  --accent-soft: rgba(0, 120, 212, 0.12);
+  --success: #107c10;
+  --warning: #9d5d00;
+  --danger: #c42b1c;
+  --node-bg: rgba(255, 255, 255, 0.86);
+  --panel-blur: blur(24px);
+}
+
+/* ---- Light: flat, high-contrast, no translucency ---- */
+html[data-theme="light"] {
+  --bg-app: #ffffff;
+  --bg-canvas: #f7f8fa;
+  --bg-canvas-dot: #e3e5ea;
+  --surface-1: #ffffff;
+  --surface-2: #f2f3f5;
+  --surface-border: rgba(15, 23, 42, 0.1);
+  --text-primary: #0f172a;
+  --text-secondary: #55627a;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-soft: rgba(37, 99, 235, 0.1);
+  --success: #15803d;
+  --warning: #b45309;
+  --danger: #dc2626;
+  --node-bg: #ffffff;
+  --panel-blur: none;
+}
+
+/* ---- Dark Premium: Win11-dark-mica-inspired, soft glow accents ---- */
+html[data-theme="dark"] {
+  --bg-app: #1e1f22;
+  --bg-canvas: #17181a;
+  --bg-canvas-dot: #2b2d31;
+  --surface-1: rgba(38, 39, 43, 0.82);
+  --surface-2: rgba(48, 49, 54, 0.92);
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --text-primary: #f1f1f3;
+  --text-secondary: #a4a6ad;
+  --accent: #60cdff;
+  --accent-hover: #8fdcff;
+  --accent-soft: rgba(96, 205, 255, 0.14);
+  --success: #6ccb5f;
+  --warning: #f4bd50;
+  --danger: #ff6961;
+  --node-bg: rgba(38, 39, 43, 0.94);
+  --panel-blur: blur(24px);
+}
+
+/* ---- AMOLED: true black for OLED panels ---- */
+html[data-theme="amoled"] {
+  --bg-app: #000000;
+  --bg-canvas: #050505;
+  --bg-canvas-dot: #1c1c1c;
+  --surface-1: #0a0a0a;
+  --surface-2: #121212;
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --text-primary: #f5f5f5;
+  --text-secondary: #9a9a9a;
+  --accent: #37e2a3;
+  --accent-hover: #5cedb6;
+  --accent-soft: rgba(55, 226, 163, 0.14);
+  --success: #37e2a3;
+  --warning: #f4bd50;
+  --danger: #ff5a5f;
+  --node-bg: #0d0d0d;
+  --panel-blur: none;
+}
+
+/* ---- Red accent: deep garnet chrome ---- */
+html[data-theme="red"] {
+  --bg-app: #170708;
+  --bg-canvas: #120506;
+  --bg-canvas-dot: #2c1114;
+  --surface-1: rgba(40, 14, 16, 0.85);
+  --surface-2: rgba(53, 18, 21, 0.92);
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --text-primary: #f7e9ea;
+  --text-secondary: #c9a3a6;
+  --accent: #e2455f;
+  --accent-hover: #ef6a80;
+  --accent-soft: rgba(226, 69, 95, 0.16);
+  --success: #6ccb5f;
+  --warning: #f4bd50;
+  --danger: #ff6961;
+  --node-bg: rgba(40, 14, 16, 0.92);
+  --panel-blur: blur(20px);
+}
+
+/* ---- Blue accent: deep marine chrome ---- */
+html[data-theme="blue"] {
+  --bg-app: #0a121f;
+  --bg-canvas: #070d17;
+  --bg-canvas-dot: #16233a;
+  --surface-1: rgba(15, 27, 46, 0.85);
+  --surface-2: rgba(20, 35, 58, 0.92);
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --text-primary: #e8f0fe;
+  --text-secondary: #9fb2cc;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-soft: rgba(59, 130, 246, 0.16);
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --node-bg: rgba(15, 27, 46, 0.92);
+  --panel-blur: blur(20px);
+}

@@ -1,0 +1,151 @@
+@import "./themes.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg-app);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  -webkit-font-smoothing: antialiased;
+  transition: background var(--transition-med), color var(--transition-med);
+}
+
+/* [dir="rtl"] mirrors layout automatically for Persian; components that
+   need to override the mirror (e.g. code/number displays) opt out with
+   .ltr-force below. */
+[dir="rtl"] .ltr-force {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.mosaic-app-shell {
+  display: grid;
+  grid-template-rows: 44px 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mosaic-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  background: var(--surface-2);
+  backdrop-filter: var(--panel-blur);
+  -webkit-backdrop-filter: var(--panel-blur);
+  border-bottom: 1px solid var(--surface-border);
+  -webkit-app-region: drag;
+}
+
+.mosaic-titlebar button,
+.mosaic-titlebar select,
+.mosaic-titlebar input {
+  -webkit-app-region: no-drag;
+}
+
+.mosaic-workspace {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr auto;
+  overflow: hidden;
+}
+
+.mosaic-panel {
+  background: var(--surface-1);
+  backdrop-filter: var(--panel-blur);
+  -webkit-backdrop-filter: var(--panel-blur);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+}
+
+.mosaic-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--surface-border) transparent;
+}
+
+.mosaic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.mosaic-btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+.mosaic-btn-primary:hover {
+  background: var(--accent-hover);
+}
+.mosaic-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.mosaic-btn-ghost {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  font-size: 13px;
+}
+.mosaic-btn-ghost:hover {
+  background: var(--surface-2);
+}
+
+.mosaic-input {
+  background: var(--surface-2);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 6px 10px;
+  font-size: 13px;
+  font-family: inherit;
+}
+.mosaic-input:focus-visible,
+.mosaic-btn-ghost:focus-visible,
+.mosaic-btn-primary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.mosaic-mono {
+  font-family: var(--font-mono);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
